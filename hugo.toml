@@ -1,0 +1,42 @@
+baseURL = 'https://example.com/'
+languageCode = 'en-us'
+title = 'Yirviel Somé | Financial Engineering'
+theme = 'PaperMod'
+[params]
+    env = 'production'
+    title = 'Yirviel Somé'
+    description = 'Financial Engineering & Quantitative Analysis'
+    defaultTheme = 'light'
+    disableThemeToggle = true
+    ShowCodeCopyButtons = true
+    ShowToc = true
+    customCSS = ['css/extended.css']
+
+
+    [params.profileMode]
+        enabled = true
+        title = 'Yirviel Somé'
+        subtitle = 'MSc · Finance & Financial Engineering. Quantitative modeling, derivatives pricing, and Python-driven financial tools.'
+        imageUrl = 'https://picsum.photos/200'
+        imageWidth = 120
+        imageHeight = 120
+
+        [[params.profileMode.buttons]]
+            name = 'View Projects'
+            url = '/posts/'
+
+    [[params.socialIcons]]
+        name = 'github'
+        url = 'https://github.com/'
+    [[params.socialIcons]]
+        name = 'linkedin'
+        url = 'https://linkedin.com/'
+
+[[menu.main]]
+    name = 'Projects'
+    url = '/posts/'
+    weight = 10
+[[menu.main]]
+    name = 'Tags'
+    url = '/tags/'
+    weight = 20

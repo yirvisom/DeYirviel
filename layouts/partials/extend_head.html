@@ -1,0 +1,42 @@
+{{ partial "math.html" . }}
+
+<style>
+    /* Premium Corporate Finance Palette Override */
+    :root {
+        --theme: #0A192F !important;       /* Deep Midnight Navy */
+        --primary: #1E293B !important;     /* Dark Slate Text */
+        --secondary: #64748B !important;   /* Muted Slate Subtitles */
+        --bg: #F8FAFC !important;          /* Crisp Off-White Background */
+        --code-bg: #F1F5F9 !important;     /* Light Grey Code Background */
+        --border: #E2E8F0 !important;      /* Clean Grid Lines */
+    }
+
+    /* Sharp Editorial Typography */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, Garamond, serif !important;
+        letter-spacing: -0.01em !important;
+        background-color: var(--bg) !important;
+        color: var(--primary) !important;
+    }
+
+    /* Structured Financial Data Tables */
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin: 24px 0 !important;
+        font-variant-numeric: tabular-nums !important; /* Perfect tabular numeric alignment */
+    }
+
+    table th {
+        background-color: #0A192F !important;
+        color: #FFFFFF !important;
+        font-weight: 600 !important;
+        padding: 12px !important;
+        text-align: left !important;
+    }
+
+    table td {
+        padding: 12px !important;
+        border-bottom: 1px solid var(--border) !important;
+    }
+</style>

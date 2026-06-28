@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Deploying deyirviel.com"
+git branch -M main
+git remote add origin https://github.com/yirvisom/DeYirviel.git
+git push -u origin main
