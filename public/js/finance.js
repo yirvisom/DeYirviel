@@ -132,7 +132,7 @@
 
     let i = 0;
     const cursor = document.createElement('span');
-    cursor.textContent = '|';
+    cursor.textContent = '';
     cursor.style.cssText = 'color:var(--gold);animation:blink 1s step-end infinite;margin-left:1px;';
     subtitle.appendChild(cursor);
 

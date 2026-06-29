@@ -1,17 +1,17 @@
 baseURL = 'https://example.com/'
 languageCode = 'en-us'
-title = 'DeYirviel'
+title = 'Yirviel Somé'
 theme = 'PaperMod'
 [params]
     env = 'production'
     title = 'Yirviel Somé'
     description = 'Financial Engineering & Quantitative Analysis'
+    author = 'Yirviel Somé'
     defaultTheme = 'light'
     disableThemeToggle = true
     ShowCodeCopyButtons = true
     ShowToc = true
     customCSS = ['css/extended.css']
-
 
     [params.profileMode]
         enabled = true
@@ -37,6 +37,14 @@ theme = 'PaperMod'
     url = '/posts/'
     weight = 10
 [[menu.main]]
-    name = 'Tags'
-    url = '/tags/'
+    name = 'Blog'
+    url = '/blog/'
     weight = 20
+[[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 30
+[[menu.main]]
+    name = 'CV'
+    url = '/cv.pdf'
+    weight = 40

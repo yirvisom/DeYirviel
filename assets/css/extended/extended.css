@@ -1168,3 +1168,225 @@ footer a:hover { color: var(--gold); }
 
 /* ── Hide PaperMod profile on homepage (we use ours) ───────── */
 body.list .profile { display: none !important; }
+
+/* ══════════════════════════════════════════════════════════════
+   HEADER UPGRADE — institutional, precise
+   ══════════════════════════════════════════════════════════════ */
+
+header.header {
+    background:      #06091200 !important;
+    background:      rgba(6, 9, 18, 0.97) !important;
+    border-bottom:   none !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+/* Gold rule under header */
+header.header::after {
+    content:    '';
+    display:    block;
+    height:     1px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold) 70%, transparent 100%);
+    opacity:    0.5;
+}
+
+.header .nav {
+    max-width:       900px !important;
+    padding:         0 2rem !important;
+    height:          62px !important;
+    border-bottom:   none !important;
+}
+
+/* Logo — name only, serif, clean */
+.logo a, .logo span, a.logo {
+    font-family:    var(--serif) !important;
+    font-size:      1.05rem !important;
+    font-weight:    400 !important;
+    color:          #ffffff !important;
+    letter-spacing: 0.08em !important;
+    text-transform: none !important;
+}
+
+/* Separator dot after name */
+.logo a::after, a.logo::after {
+    content:        ' ·';
+    color:          var(--gold);
+    margin-left:    2px;
+    opacity:        0.7;
+}
+
+/* Nav links */
+#menu ul, nav#menu ul {
+    gap: 2.5rem !important;
+}
+
+#menu ul li a, nav#menu ul li a {
+    font-size:      0.62rem !important;
+    letter-spacing: 0.16em !important;
+    text-transform: uppercase !important;
+    font-weight:    600 !important;
+    color:          rgba(200, 214, 229, 0.7) !important;
+    padding:        6px 0 !important;
+    border-bottom:  1px solid transparent !important;
+    transition:     color 0.2s, border-color 0.2s !important;
+}
+
+#menu ul li a:hover, nav#menu ul li a:hover {
+    color:        #ffffff !important;
+    border-color: var(--gold) !important;
+}
+
+/* CV link in nav gets gold treatment */
+#menu ul li:last-child a, nav#menu ul li:last-child a {
+    color:        var(--gold) !important;
+    border:       1px solid rgba(201,168,76,0.3) !important;
+    padding:      5px 14px !important;
+    transition:   all 0.2s !important;
+}
+
+#menu ul li:last-child a:hover, nav#menu ul li:last-child a:hover {
+    background:   rgba(201,168,76,0.1) !important;
+    border-color: var(--gold) !important;
+    color:        var(--gold) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HEADER V3 — IMPOSANT, CINEMATIC, FINANCE AUTHORITY
+   ══════════════════════════════════════════════════════════════ */
+
+/* Reset tout ce qu'on avait mis avant */
+header.header {
+    background:            #040810 !important;
+    border-bottom:         none !important;
+    backdrop-filter:       none !important;
+    -webkit-backdrop-filter: none !important;
+    position:              sticky !important;
+    top:                   0 !important;
+    z-index:               1000 !important;
+    box-shadow:            0 1px 0 rgba(201,168,76,0.2), 0 4px 32px rgba(0,0,0,0.6) !important;
+}
+
+header.header::before {
+    content:    '';
+    position:   absolute;
+    top:        0; left: 0; right: 0;
+    height:     2px;
+    background: linear-gradient(90deg, transparent, var(--gold), #e8c97a, var(--gold), transparent);
+    z-index:    2;
+}
+
+header.header::after {
+    display: none !important;
+}
+
+.header .nav {
+    max-width:       1100px !important;
+    margin:          0 auto !important;
+    padding:         0 2.5rem !important;
+    height:          72px !important;
+    display:         flex !important;
+    align-items:     center !important;
+    justify-content: space-between !important;
+    border-bottom:   none !important;
+}
+
+/* ── Logo block ─────────────────────────────────────────────── */
+.logo, .logo a, a.logo {
+    display:         flex !important;
+    flex-direction:  column !important;
+    gap:             0 !important;
+    text-decoration: none !important;
+    line-height:     1.1 !important;
+}
+
+.logo a, a.logo {
+    font-family:    var(--serif) !important;
+    font-size:      1.3rem !important;
+    font-weight:    400 !important;
+    color:          #ffffff !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Remove the dot we added before */
+.logo a::after, a.logo::after {
+    display: none !important;
+}
+
+/* Subtitle under name via pseudo */
+.logo a::after, a.logo::after {
+    content:        'Financial Engineer · FMVA · BIDA' !important;
+    display:        block !important;
+    font-family:    var(--sans) !important;
+    font-size:      0.55rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color:          var(--gold) !important;
+    font-weight:    600 !important;
+    margin-top:     3px !important;
+    opacity:        0.85 !important;
+}
+
+/* ── Nav links ──────────────────────────────────────────────── */
+#menu ul, nav#menu ul {
+    gap:         0 !important;
+    align-items: center !important;
+}
+
+#menu ul li, nav#menu ul li {
+    position: relative;
+}
+
+#menu ul li a, nav#menu ul li a {
+    font-size:      0.65rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    font-weight:    600 !important;
+    color:          rgba(168, 184, 204, 0.8) !important;
+    padding:        8px 20px !important;
+    border:         none !important;
+    border-bottom:  none !important;
+    display:        block !important;
+    transition:     color 0.2s !important;
+    position:       relative !important;
+}
+
+#menu ul li a::after, nav#menu ul li a::after {
+    content:    '';
+    position:   absolute;
+    bottom:     -4px;
+    left:       20px;
+    right:      20px;
+    height:     1px;
+    background: var(--gold);
+    transform:  scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+#menu ul li a:hover, nav#menu ul li a:hover {
+    color: #ffffff !important;
+}
+
+#menu ul li a:hover::after, nav#menu ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* CV button — pill doré */
+#menu ul li:last-child a, nav#menu ul li:last-child a {
+    background:     rgba(201,168,76,0.12) !important;
+    color:          var(--gold) !important;
+    border:         1px solid rgba(201,168,76,0.4) !important;
+    padding:        7px 18px !important;
+    margin-left:    12px !important;
+    transition:     all 0.2s !important;
+}
+
+#menu ul li:last-child a:hover, nav#menu ul li:last-child a:hover {
+    background:  var(--gold) !important;
+    color:       #040810 !important;
+    box-shadow:  0 0 20px rgba(201,168,76,0.35) !important;
+}
+
+#menu ul li:last-child a::after,
+nav#menu ul li:last-child a::after {
+    display: none !important;
+}
