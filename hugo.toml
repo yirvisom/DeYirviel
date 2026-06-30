@@ -1,6 +1,6 @@
 baseURL = 'https://example.com/'
 languageCode = 'en-us'
-title = 'Yirviel Somé'
+title = 'DeYirviel'
 theme = 'PaperMod'
 [params]
     env = 'production'

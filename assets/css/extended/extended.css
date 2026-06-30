@@ -876,7 +876,7 @@ footer a:hover { color: var(--gold); }
 
 .ys-stat {
     padding:       1.5rem 1.25rem;
-    border-right:  1px solid var(--border);
+    border-right:  none !important;
     display:       flex;
     flex-direction: column;
     gap:           0.35rem;
@@ -1313,9 +1313,12 @@ header.header::after {
 }
 
 /* Subtitle under name via pseudo */
+/* Subtitle under name via pseudo */
 .logo a::after, a.logo::after {
     content:        'Financial Engineer · FMVA · BIDA' !important;
     display:        block !important;
+    border:         none !important;       /* <--- ADD THIS */
+    background:     none !important;       /* <--- ADD THIS */
     font-family:    var(--sans) !important;
     font-size:      0.55rem !important;
     letter-spacing: 0.18em !important;
@@ -1325,7 +1328,6 @@ header.header::after {
     margin-top:     3px !important;
     opacity:        0.85 !important;
 }
-
 /* ── Nav links ──────────────────────────────────────────────── */
 #menu ul, nav#menu ul {
     gap:         0 !important;
@@ -1390,3 +1392,12 @@ header.header::after {
 nav#menu ul li:last-child a::after {
     display: none !important;
 }
+
+/* Brute-force kill any stray borders, pseudo-cursors, or lines in the logo container */
+.logo, .logo *, .logo *::before, .logo *::after {
+    border: none !important;
+    background-image: none !important;
+    text-decoration: none !important;
+.lang-switch, .logo-switches {
+    display: none !important;
+}}
