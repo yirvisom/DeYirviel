@@ -25,7 +25,7 @@
         width: 100% !important;
         border-collapse: collapse !important;
         margin: 24px 0 !important;
-        font-variant-numeric: tabular-nums !important; /* Perfect tabular numeric alignment */
+        font-variant-numeric: tabular-nums !important; 
     }
 
     table th {
@@ -40,46 +40,90 @@
         padding: 12px !important;
         border-bottom: 1px solid var(--border) !important;
     }
-/* --- Correctif Responsive pour le Header (Mobile) --- */
-@media (max-width: 768px) {
-    /* 1. On force le conteneur du header à s'aligner verticalement */
-    header, .nav-container, nav { 
+
+    /* ==========================================================================
+       STYLING DU LOGO & CORRECTIF RESPONSIVE (PaperMod Override)
+       ========================================================================== */
+
+    /* 1. Intégration du logo à gauche du bloc de marque (PC & Mobile) */
+    .logo {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 14px !important; /* Espace entre le logo et le texte */
+    }
+
+    /* Injection de la ligature dorée */
+    .logo::before {
+        content: "";
+        display: inline-block !important;
+        width: 36px;  /* Taille idéale du logo */
+        height: 36px;
+        background-image: url("/logo.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        flex-shrink: 0 !important; /* Empêche le logo de se déformer */
+    }
+
+    /* On s'assure que le titre et le sous-titre restent empilés verticalement comme avant */
+    .logo a {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding: 15px 10px !important;
-        gap: 12px !important;
-        width: 100% !important;
+        align-items: flex-start !important;
     }
 
-    /* 2. On réduit légèrement la taille des textes pour mobile */
-    .site-brand, h1 {
-        font-size: 24px !important; /* Réduit la taille du titre principal */
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 6px !important;
-    }
+    /* ==========================================================================
+       2. COMPATIBILITÉ TÉLÉPHONE (Media Query < 768px)
+       ========================================================================== */
+    @media (max-width: 768px) {
+        /* Force la barre de navigation globale à s'ordonner verticalement */
+        .nav {
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 15px 10px !important;
+            row-gap: 16px !important;
+            width: 100% !important;
+        }
 
-    .brand-subtitle, small {
-        font-size: 9px !important; /* Évite que le sous-titre déborde */
-        letter-spacing: 0.05em !important;
-        white-space: normal !important; /* Permet le retour à la ligne si nécessaire */
-    }
+        /* Centre tout le bloc Marque (Logo + Titres) sur mobile */
+        .logo {
+            justify-content: center !important;
+            margin: 0 auto !important;
+            gap: 10px !important;
+        }
 
-    /* 3. On organise les liens de navigation (Projects, Blog, About...) */
-    .nav-links, .menu, .controls { 
-        display: flex !important;
-        flex-wrap: wrap !important; /* Si les liens sont trop longs, ils passent à la ligne suivante */
-        justify-content: center !important;
-        gap: 14px !important;
-        padding: 0 !important;
-        margin-top: 5px !important;
-    }
+        .logo a {
+            align-items: center !important; /* Centre le sous-titre sous DeYirviel sur mobile */
+        }
 
-    .nav-links a {
-        font-size: 14px !important;
+        /* Réduction subtile des tailles pour que rien ne déborde sur petit écran */
+        .logo a h1, .logo a span {
+            font-size: 24px !important;
+        }
+
+        /* Gestion propre du sous-titre sur mobile */
+        .logo a small, .brand-subtitle {
+            font-size: 9px !important;
+            letter-spacing: 0.05em !important;
+            white-space: nowrap !important; /* Garde la ligne propre */
+        }
+
+        /* Réalignement horizontal du menu (Projects, Blog, About, CV) au centre */
+        #menu {
+            position: relative !important;
+            overflow-x: visible !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        #menu ul {
+            display: flex !important;
+            flex-wrap: wrap !important; /* Passe à la ligne si l'écran est minuscule */
+            justify-content: center !important;
+            gap: 15px !important;
+            padding: 0 !important;
+        }
     }
-}
 </style>
