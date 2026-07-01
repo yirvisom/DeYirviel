@@ -40,4 +40,46 @@
         padding: 12px !important;
         border-bottom: 1px solid var(--border) !important;
     }
+/* --- Correctif Responsive pour le Header (Mobile) --- */
+@media (max-width: 768px) {
+    /* 1. On force le conteneur du header à s'aligner verticalement */
+    header, .nav-container, nav { 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 15px 10px !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    /* 2. On réduit légèrement la taille des textes pour mobile */
+    .site-brand, h1 {
+        font-size: 24px !important; /* Réduit la taille du titre principal */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    .brand-subtitle, small {
+        font-size: 9px !important; /* Évite que le sous-titre déborde */
+        letter-spacing: 0.05em !important;
+        white-space: normal !important; /* Permet le retour à la ligne si nécessaire */
+    }
+
+    /* 3. On organise les liens de navigation (Projects, Blog, About...) */
+    .nav-links, .menu, .controls { 
+        display: flex !important;
+        flex-wrap: wrap !important; /* Si les liens sont trop longs, ils passent à la ligne suivante */
+        justify-content: center !important;
+        gap: 14px !important;
+        padding: 0 !important;
+        margin-top: 5px !important;
+    }
+
+    .nav-links a {
+        font-size: 14px !important;
+    }
+}
 </style>
