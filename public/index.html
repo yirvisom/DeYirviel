@@ -108,51 +108,64 @@
     @media (max-width: 768px) {
          
         .nav {
+            display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
             justify-content: center !important;
-            padding: 15px 10px !important;
-            row-gap: 16px !important;
+            padding: 20px 10px !important;
             width: 100% !important;
         }
 
          
         .logo {
+            display: flex !important;
             justify-content: center !important;
-            margin: 0 auto !important;
-            gap: 10px !important;
+            margin: 0 auto 10px auto !important;
         }
 
         .logo a {
             align-items: center !important;  
-        }
-
-         
-        .logo a h1, .logo a span {
-            font-size: 24px !important;
-        }
-
-         
-        .logo a small, .brand-subtitle {
-            font-size: 9px !important;
-            letter-spacing: 0.05em !important;
-            white-space: nowrap !important;  
+            text-align: center !important;
         }
 
          
         #menu {
-            position: relative !important;
-            overflow-x: visible !important;
+            position: static !important;  
+            display: block !important;
+            visibility: visible !important;
+            width: 100% !important;
+            margin: 10px 0 0 0 !important;
             padding: 0 !important;
-            margin: 0 !important;
         }
 
+         
         #menu ul {
             display: flex !important;
-            flex-wrap: wrap !important;  
-            justify-content: center !important;
-            gap: 15px !important;
+            flex-direction: row !important;  
+            flex-wrap: wrap !important;      
+            justify-content: center !important;  
+            align-items: center !important;
+            gap: 20px !important;             
             padding: 0 !important;
+            margin: 0 !important;
+            list-style: none !important;
+        }
+
+        #menu ul li a {
+            font-size: 15px !important;
+            display: inline-block !important;
+            padding: 5px 2px !important;
+        }
+
+         
+        .logo a h1, .logo a span {
+            font-size: 22px !important;
+        }
+
+        .logo a small, .brand-subtitle {
+            font-size: 9px !important;
+            white-space: normal !important;  
+            text-align: center !important;
         }
     }
 </style>

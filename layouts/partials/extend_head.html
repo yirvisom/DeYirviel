@@ -74,56 +74,70 @@
     }
 
     /* ==========================================================================
+      /* ==========================================================================
        2. COMPATIBILITÉ TÉLÉPHONE (Media Query < 768px)
        ========================================================================== */
     @media (max-width: 768px) {
-        /* Force la barre de navigation globale à s'ordonner verticalement */
+        /* On casse le positionnement absolu par défaut du thème PaperMod */
         .nav {
+            display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
             justify-content: center !important;
-            padding: 15px 10px !important;
-            row-gap: 16px !important;
+            padding: 20px 10px !important;
             width: 100% !important;
         }
 
-        /* Centre tout le bloc Marque (Logo + Titres) sur mobile */
+        /* Centre le bloc complet Marque (Logo + Titre + Subtitle) */
         .logo {
+            display: flex !important;
             justify-content: center !important;
-            margin: 0 auto !important;
-            gap: 10px !important;
+            margin: 0 auto 10px auto !important;
         }
 
         .logo a {
-            align-items: center !important; /* Centre le sous-titre sous DeYirviel sur mobile */
+            align-items: center !important; /* Centre les textes sous le logo */
+            text-align: center !important;
         }
 
-        /* Réduction subtile des tailles pour que rien ne déborde sur petit écran */
-        .logo a h1, .logo a span {
-            font-size: 24px !important;
-        }
-
-        /* Gestion propre du sous-titre sur mobile */
-        .logo a small, .brand-subtitle {
-            font-size: 9px !important;
-            letter-spacing: 0.05em !important;
-            white-space: nowrap !important; /* Garde la ligne propre */
-        }
-
-        /* Réalignement horizontal du menu (Projects, Blog, About, CV) au centre */
+        /* Force le menu (Projects, Blog, etc.) à descendre en dessous du titre */
         #menu {
-            position: relative !important;
-            overflow-x: visible !important;
+            position: static !important; /* Supprime le blocage absolu sur la droite */
+            display: block !important;
+            visibility: visible !important;
+            width: 100% !important;
+            margin: 10px 0 0 0 !important;
             padding: 0 !important;
-            margin: 0 !important;
         }
 
+        /* Aligne la liste des liens horizontalement et bien centrée */
         #menu ul {
             display: flex !important;
-            flex-wrap: wrap !important; /* Passe à la ligne si l'écran est minuscule */
-            justify-content: center !important;
-            gap: 15px !important;
+            flex-direction: row !important; /* Aligne les liens côte à côte */
+            flex-wrap: wrap !important;     /* Permet de passer à la ligne si écran trop petit */
+            justify-content: center !important; /* Centre parfaitement les liens */
+            align-items: center !important;
+            gap: 20px !important;            /* Espace confortable pour cliquer avec le pouce */
             padding: 0 !important;
+            margin: 0 !important;
+            list-style: none !important;
+        }
+
+        #menu ul li a {
+            font-size: 15px !important;
+            display: inline-block !important;
+            padding: 5px 2px !important;
+        }
+
+        /* Réduction de la taille globale du titre pour mobile */
+        .logo a h1, .logo a span {
+            font-size: 22px !important;
+        }
+
+        .logo a small, .brand-subtitle {
+            font-size: 9px !important;
+            white-space: normal !important; /* Permet au sous-titre de respirer */
+            text-align: center !important;
         }
     }
 </style>
