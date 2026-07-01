@@ -75,69 +75,88 @@
 
     /* ==========================================================================
       /* ==========================================================================
-       2. COMPATIBILITÉ TÉLÉPHONE (Media Query < 768px)
+      /* ==========================================================================
+       2. COMPATIBILITÉ TÉLÉPHONE (Media Query < 768px) - CORRECTION RADICALE
        ========================================================================== */
     @media (max-width: 768px) {
-        /* On casse le positionnement absolu par défaut du thème PaperMod */
+        /* On transforme le conteneur global de la navbar en grille à une seule colonne */
         .nav {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 20px 10px !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            justify-items: center !important;
+            text-align: center !important;
+            padding: 15px 10px !important;
+            row-gap: 16px !important;
             width: 100% !important;
+            box-sizing: border-box !important;
         }
 
-        /* Centre le bloc complet Marque (Logo + Titre + Subtitle) */
+        /* Centre le logo et le titre dans leur propre ligne de la grille */
         .logo {
             display: flex !important;
             justify-content: center !important;
-            margin: 0 auto 10px auto !important;
+            margin: 0 auto !important;
+            width: 100% !important;
         }
 
         .logo a {
-            align-items: center !important; /* Centre les textes sous le logo */
+            align-items: center !important;
             text-align: center !important;
-        }
-
-        /* Force le menu (Projects, Blog, etc.) à descendre en dessous du titre */
-        #menu {
-            position: static !important; /* Supprime le blocage absolu sur la droite */
-            display: block !important;
-            visibility: visible !important;
             width: 100% !important;
-            margin: 10px 0 0 0 !important;
-            padding: 0 !important;
         }
 
-        /* Aligne la liste des liens horizontalement et bien centrée */
+        /* Annulation totale des règles absolues de PaperMod sur le menu */
+        #menu {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            left: auto !important;
+            bottom: auto !important;
+            transform: none !important;
+            display: flex !important;
+            justify-content: center !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: visible !important;
+            visibility: visible !important;
+        }
+
+        /* Force les liens (Projects, Blog, etc.) à s'aligner horizontalement au centre */
         #menu ul {
             display: flex !important;
-            flex-direction: row !important; /* Aligne les liens côte à côte */
-            flex-wrap: wrap !important;     /* Permet de passer à la ligne si écran trop petit */
-            justify-content: center !important; /* Centre parfaitement les liens */
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
             align-items: center !important;
-            gap: 20px !important;            /* Espace confortable pour cliquer avec le pouce */
+            gap: 15px !important;
+            width: 100% !important;
             padding: 0 !important;
             margin: 0 !important;
             list-style: none !important;
         }
 
-        #menu ul li a {
-            font-size: 15px !important;
-            display: inline-block !important;
-            padding: 5px 2px !important;
+        #menu li {
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        /* Réduction de la taille globale du titre pour mobile */
+        #menu a {
+            display: inline-block !important;
+            font-size: 15px !important;
+            padding: 4px 8px !important;
+        }
+
+        /* Sécurité pour les textes */
         .logo a h1, .logo a span {
             font-size: 22px !important;
         }
 
         .logo a small, .brand-subtitle {
             font-size: 9px !important;
-            white-space: normal !important; /* Permet au sous-titre de respirer */
-            text-align: center !important;
+            white-space: normal !important;
+            display: block !important;
+            width: 100% !important;
         }
     }
 </style>
