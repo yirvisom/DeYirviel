@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 620" id="svgRoot" style="background: #F5F0E3;">
+  <style>
+    .mark { opacity: 1; }
+    /* Définition des couleurs exactes de ta charte */
+    :root {
+      --ink: #1C1812;
+      --cream: #F5F0E3;
+      --accent: #B5502A;
+    }
+  </style>
+  
+  <g class="mark" id="markLayer" style="opacity: 1; transform: translateY(0px);">
+    <circle cx="150" cy="320" r="100" fill="var(--ink)"></circle>
+    <circle cx="150" cy="320" r="52.811" fill="var(--cream)"></circle>
+    <rect x="202.6" y="96.39" width="47.18" height="323.6" fill="var(--ink)"></rect>
+    <path d="M278.1 220 L378.1 405.35" stroke="var(--ink)" stroke-width="47.18" stroke-linecap="round" fill="none"></path>
+    <path d="M478.1 220 L378.1 405.35 L335.6 519.6" stroke="var(--ink)" stroke-width="47.18" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+    <path d="M335.6 519.6 Q242.4 565.8 150 420" stroke="var(--accent)" stroke-width="18.87" stroke-linecap="round" fill="none"></path>
+  </g>
+</svg>
