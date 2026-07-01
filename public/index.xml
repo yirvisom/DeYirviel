@@ -6,6 +6,15 @@
     <description>Recent content on DeYirviel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jun 2026 04:44:51 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Jun 2026 10:24:19 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Quant Model</title>
+      <link>http://localhost:1313/blog/my-first-quant-model/</link>
+      <pubDate>Tue, 30 Jun 2026 10:24:19 +0200</pubDate>
+      
+      <guid>http://localhost:1313/blog/my-first-quant-model/</guid>
+      <description>An overview of configuring an automated financial analytics stack.</description>
+    </item>
+    
   </channel>
 </rss>

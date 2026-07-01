@@ -1393,11 +1393,121 @@ nav#menu ul li:last-child a::after {
     display: none !important;
 }
 
-/* Brute-force kill any stray borders, pseudo-cursors, or lines in the logo container */
+/* FIXED SYNTAX FOR THE CSS TAIL: */
 .logo, .logo *, .logo *::before, .logo *::after {
     border: none !important;
     background-image: none !important;
     text-decoration: none !important;
+}
+
 .lang-switch, .logo-switches {
     display: none !important;
-}}
+}
+/* ─────────────────────────────────────────────────────────────
+   SINGLE POST READABILITY FIX
+   ───────────────────────────────────────────────────────────── */
+.single, .post-single {
+    background-color: #080e1a !important; /* Force the premium dark background */
+}
+
+.post-content, .post-content p {
+    color: #e8edf5 !important;           /* Bright crisp cream-white for ultimate reading contrast */
+    font-size: 1.05rem !important;        /* Comfortable reading size */
+    line-height: 1.85 !important;         /* Breathe room between lines */
+}
+
+.post-description {
+    color: #a8b8cc !important;           /* Slate grey reserved strictly for description subtitles */
+    border-left: 2px solid var(--gold) !important;
+}
+/* ── ULTIMATE BRUTE-FORCE FOR BLACK TERMINAL THEME ── */
+
+/* 1. Force the root and body variables to ignore PaperMod's light mode fallback */
+html, 
+html:not([class*="dark"]),
+body,
+.page,
+.main,
+.single,
+.post-single {
+    background-color: #080e1a !important;
+    background: #080e1a !important;
+    color: #e8edf5 !important;
+}
+
+/* 2. Fix the PaperMod native content variables specifically for this layout container */
+:root,
+html:not([class*="dark"]) body {
+    --theme: #080e1a !important;
+    --content: #e8edf5 !important;
+    --primary: #e8edf5 !important;
+    --secondary: #a8b8cc !important;
+}
+
+/* 3. Ensure all text inside the post adapts to the pitch-dark background */
+.post-header h1, 
+.post-title {
+    color: #ffffff !important;
+}
+
+.post-content, 
+.post-content p, 
+.post-content ul, 
+.post-content ol {
+    color: #a8b8cc !important; /* Crisp slate-blue text */
+}
+
+.post-description,
+blockquote {
+    color: #5a7090 !important;
+    border-left: 2px solid var(--gold) !important;
+    background: transparent !important;
+}
+/* ── CONFIGURATION GRANDE ÉCHELLE NATIVE (SANS ZOOM CORROMPU) ── */
+
+html {
+    /* Augmente la base de calcul globale de tout le site de manière fluide */
+    font-size: 20px !important; 
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+body {
+    /* On réinitialise complètement les hacks de zoom obsolètes */
+    zoom: normal !important;
+    -moz-transform: none !important;
+    transform: none !important;
+    
+    /* On verrouille le défilement horizontal */
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 auto !important;
+}
+
+/* ── ÉLARGISSEMENT HARMONIEUX DES CONTENEURS DE CONTENU ── */
+
+.main,
+.ys-section,
+.ys-cta-strip-inner,
+.ys-hero-inner {
+    /* On passe d'un max-width serré de 820px à un format immersif de 1120px */
+    max-width: 1120px !important; 
+    margin: 0 auto !important;
+}
+
+header.header .nav {
+    /* Alignement parfait de la barre de navigation à l'échelle supérieure */
+    max-width: 1460px !important; 
+    height: 82px !important; /* Donne de l'espace pour respirer avec la grande police */
+}
+
+/* Ajustement fin des polices du menu pour garder l'équilibre */
+.logo a, a.logo {
+    font-size: 1.45rem !important;
+}
+
+#menu ul li a, nav#menu ul li a {
+    font-size: 0.72rem !important;
+}
